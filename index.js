@@ -3,7 +3,7 @@
 
 fs = require("fs");
 
- var callAPI = (base,exponent)=>{
+export var callAPI = (base,exponent)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
