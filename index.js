@@ -3,7 +3,7 @@
 
 fs = require("fs");
 
-export var callAPI = (base,exponent)=>{
+function callApiScript(base,exponent){
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
@@ -18,13 +18,12 @@ export var callAPI = (base,exponent)=>{
                 redirect: 'follow'
             };
        
-            var path = ""
-            fs.readFile("./output.txt", "utf8", (err,data) => {
-                path = data;
-            })
+            var path = "https://tx2utb9me1.execute-api.eu-central-1.amazonaws.com/mydev/mydemoresource"
             // make API call with parameters and use promises to get response
             fetch(path, requestOptions)
             .then(response => response.text())
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
         }
+
+module.exports = callApiScript;
