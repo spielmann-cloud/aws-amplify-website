@@ -3,7 +3,7 @@
 
 fs = require("fs");
 
-function callApiScript(base,exponent){
+var callAPI = (base,exponent) => {
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
